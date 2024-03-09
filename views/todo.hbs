@@ -1,4 +1,12 @@
+<h1>{{title}}</h1>
+<p>Created a todo app with websockets and htmx</p>
 <div>
-    <p>Todo 1</p>
-    <p>Todo 2</p>
+    <h3>Create a new todo:</h3>
+    <form hx-ws="send:submit">
+        <input name="new_todo">
+    </form>
+    <h3>Todo List:</h3>
+    <div id="todo_list">
+        {{todo}}
+    </div>
 </div>
