@@ -1,4 +1,14 @@
-<div id="todo-{{id}}">
-  {{todo}}
-  <div>Edit</div>
+<div id="todo-item-{{id}}" class="TodoItem">
+  <p hx-patch="/todo/complete/{{id}}" hx-trigge="click" hx-target="#todo-item-{{id}}" hx-swap="outerHTML">
+    {{#if complete}}
+    ✅
+    {{else}}
+    ❌
+    {{/if}}
+    {{todo}}
+  </p>
+  <div>
+    <label hx-get='/todo/edit/{{id}}' hx-target="#todo-item-{{id}}" hx-swap="outerHTML">Edit</label>
+    <label hx-delete='/todo/delete/{{id}}' hx-target="#todo_list" >Delete</label>
+  </div>
 </div>

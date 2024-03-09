@@ -1,0 +1,5 @@
+<div id="todo-item-{{id}}" class="TodoItem">
+  <form hx-patch="/todo/edit/{{id}}" hx-target="#todo-item-{{id}}" hx-swap="outerHTML">
+    <input name="edit_todo" placeholder="{{todo}}">
+  </form>
+</div>
