@@ -101,4 +101,6 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.log(addr)
+  console.log(`Listening on: http://127.0.0.1:${addr.port}`)
 }

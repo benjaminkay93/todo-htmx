@@ -2,11 +2,13 @@
 <p>Created a todo app with websockets and htmx</p>
 <div>
     <h3>Create a new todo:</h3>
-    <form hx-ws="send:submit">
+    <form hx-post="/todo/add" hx-target="#todo_list">
         <input name="new_todo">
     </form>
     <h3>Todo List:</h3>
     <div id="todo_list">
-        {{todo}}
+        {{#each todoList}}
+          {{> todo-item this}}
+        {{/each}}
     </div>
 </div>
